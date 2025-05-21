@@ -4,19 +4,23 @@ metadata:
   name: mongo-deployment
   namespace: roboshop
   labels:
-    app: nginx
+    app: mongodb
+    tier: DB
+    project: roboshop
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      app: nginx
+      app: mongodb
+      tier: DB
+      project: roboshop
   template:
     metadata:
       labels:
-        app: nginx
+        app: mongodb
+        tier: DB
+        project: roboshop
     spec:
       containers:
       - name: nginx
         image: mongokidambih91/mongo:latest
-        ports:
-        - containerPort: 80
