@@ -1,3 +1,3 @@
-FROM mongodb:5
+FROM mongo
 
 COPY *.js /docker-enterypoint-initdb.d/
